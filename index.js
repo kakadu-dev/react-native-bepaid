@@ -5,12 +5,14 @@ const RNBepaidModule = NativeModules.RNBepaid;
 
 export default class RNBepaid
 {
-    static async createEncryptedFields(cardNumber, cardExp, cardCvv, cartHolder, publicKey)
+    endUrl = 'https://'
+
+    static async createEncryptedFields(cardNumber, cardExp, cardCvv, cardHolder, publicKey)
     {
         try {
             const begateway = new BeGatewayCSE(publicKey)
 
-            return begateway.encrypt(cardNumber, cardExp, cardCvv, cartHolder)
+            return begateway.encrypt(cardNumber, cardExp, cardCvv, cardHolder)
         } catch (error) {
             return createError(error);
         }
@@ -19,7 +21,7 @@ export default class RNBepaid
     static async show3DS(url)
     {
         try {
-            return await RNBepaidModule.show3DS(url);
+            return await RNBepaidModule.show3DS(url, this.endUrl);
         } catch (error) {
             return createError(error);
         }

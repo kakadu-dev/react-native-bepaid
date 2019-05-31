@@ -61,7 +61,7 @@ function encryptValue(value, version)
 	return '$begatewaycsejs_' + version + '$' + encryptedData
 }
 
-BeGatewayCSE.prototype.encrypt = function(cardNumber, cardExp, cardCvv, cartHolder) {
+BeGatewayCSE.prototype.encrypt = function(cardNumber, cardExp, cardCvv, cardHolder) {
 	var exp = cardExp.split('/')
 	var year
 
@@ -76,7 +76,7 @@ BeGatewayCSE.prototype.encrypt = function(cardNumber, cardExp, cardCvv, cartHold
 		encryptedCardExpMonth: encryptValue(exp[0], this.version),
 		encryptedCardExpYear:  encryptValue(year, this.version),
 		encryptedCvv:          encryptValue(cardCvv, this.version),
-		encryptedHolder:       encryptValue(cartHolder, this.version),
+		encryptedHolder:       encryptValue(cardHolder, this.version),
 	}
 }
 

@@ -17,13 +17,14 @@ public class Bepaid extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void show3DS(String url, Promise promise) {
+  public void show3DS(String url, String endUrl, Promise promise) {
     try {
-      Intent intent = new Intent(getReactApplicationContext(), CheckoutActivity.class);
+      Intent intent = new Intent(getReactApplicationContext(), SecureActivity.class);
 
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
       SecureActivity.url = url;
+      SecureActivity.endUrl = endUrl;
       SecureActivity.promise = promise;
 
       getReactApplicationContext().startActivity(intent);

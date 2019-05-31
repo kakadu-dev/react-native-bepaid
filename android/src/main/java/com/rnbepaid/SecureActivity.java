@@ -1,10 +1,10 @@
 package com.rnbepaid;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.WritableMap;
@@ -12,10 +12,69 @@ import com.facebook.react.bridge.WritableMap;
 public class SecureActivity extends Activity {
 
     static String url;
+    static String endUrl;
     static Promise promise;
+
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+        String url = SecureActivity.url;
+
+        getActionBar().setSubtitle(url);
+        webView = new WebView(this);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return handleUrl(url);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return handleUrl(request.getUrl().toString());
+            }
+
+            private boolean handleUrl(String url) {
+                if (url.contains(SecureActivity.endUrl)) {
+                    success();
+                    finish();
+                    return true;
+                }
+                webView.loadUrl(url);
+                return true;
+            }
+        });
+        setContentView(webView);
+        webView.loadUrl(url);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            error();
+            super.onBackPressed();
+        }
+    }
+
+    private void success() {
+        WritableMap map = Arguments.createMap();
+
+        map.putBoolean("success", true);
+
+        SecureActivity.promise.resolve(map);
+    }
+
+    private void error() {
+        WritableMap map = Arguments.createMap();
+
+        map.putBoolean("success", false);
+        map.putString("message", "Canceled");
+
+        SecureActivity.promise.resolve(map);
     }
 }

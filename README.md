@@ -29,7 +29,7 @@ __Arguments__
 - `cardNumber` - `String` Number of payment card.
 - `cardExp` - `String` Expire date of payment card.
 - `cardCvv` - `String` CVV code of payment card.
-- `cartHolder` - `String` Card holder name
+- `cardHolder` - `String` Card holder name
 
 __Examples__
 ```js
