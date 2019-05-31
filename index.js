@@ -5,7 +5,7 @@ const RNBepaidModule = NativeModules.RNBepaid;
 
 export default class RNBepaid
 {
-    endUrl = 'https://'
+    static endUrl = 'https://test.ru'
 
     static async createEncryptedFields(cardNumber, cardExp, cardCvv, cardHolder, publicKey)
     {
@@ -21,7 +21,7 @@ export default class RNBepaid
     static async show3DS(url)
     {
         try {
-            return await RNBepaidModule.show3DS(url, this.endUrl);
+            return await RNBepaidModule.show3DS(url, RNBepaid.endUrl);
         } catch (error) {
             return createError(error);
         }

@@ -23,7 +23,6 @@ public class SecureActivity extends Activity {
 
         String url = SecureActivity.url;
 
-        getActionBar().setSubtitle(url);
         webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
@@ -34,6 +33,10 @@ public class SecureActivity extends Activity {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (request.getUrl() == null) {
+                    return false;
+                }
+
                 return handleUrl(request.getUrl().toString());
             }
 
@@ -75,6 +78,6 @@ public class SecureActivity extends Activity {
         map.putBoolean("success", false);
         map.putString("message", "Canceled");
 
-        SecureActivity.promise.resolve(map);
+        SecureActivity.promise.reject("Canceled");
     }
 }
