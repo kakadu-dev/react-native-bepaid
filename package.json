@@ -1,0 +1,28 @@
+{
+    "name": "react-native-bepaid",
+    "version": "1.0.0",
+    "description": "Bepaid SDK for react-native",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+github.com/kakadu-dev/react-native-bepaid.git"
+    },
+    "bugs": {
+        "url": "https://github.com/kakadu-dev/react-native-bepaid/issues"
+    },
+    "homepage": "https://github.com/kakadu-dev/react-native-bepaid",
+    "keywords": [
+        "react-native",
+        "native",
+        "bepaid"
+    ],
+    "author": {
+        "name": "kakadu-dev",
+        "email": "m.yarmoluk@kakadu.bz",
+        "url": "https://github.com/kakadu-dev"
+    },
+    "license": "MIT",
+    "peerDependencies": {
+        "react-native": "*"
+    }
+}
