@@ -3,6 +3,8 @@
 #import "SDWebViewController/SDWebViewDelegate.h"
 #import "NSString+URLEncoding.h"
 
+#define COMPLETE_URL @"https://test.com"
+
 typedef void (^RCTPromiseResolveBlock)(id result);
 typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError *error);
 
@@ -28,7 +30,7 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
     self.rejectWebView = reject;
     
     // Show WebView
-    SDWebViewController *webViewController = [[SDWebViewController alloc] initWithURL:url transactionId:transactionId token:token];
+    SDWebViewController *webViewController = [[SDWebViewController alloc] initWithURL:url];
     webViewController.m_delegate = self;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
     [self.navigationController.navigationBar setTranslucent:false];
@@ -42,13 +44,8 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
     // Detect url
     NSString *urlString = request.URL.absoluteString;
     
-    if ([urlString isEqualToString:POST_BACK_URL]) {
-        NSString *result = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
-        NSString *mdString = [result stringBetweenString:@"MD=" andString:@"&PaRes"];
-        NSString *paResString = [[result stringBetweenString:@"PaRes=" andString:@""] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
-        NSDictionary *dictionary = @{@"MD": mdString, @"PaRes": paResString};
-        
+    if ([urlString isEqualToString:COMPLETE_URL]) {
+        NSDictionary *dictionary = @{@"status": @YES};
         self.resolveWebView(dictionary);
         
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
