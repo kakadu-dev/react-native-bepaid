@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		954FC90C20AADA700017B273 /* RNBepaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FC90B20AADA700017B273 /* RNBepaid.m */; };
 		AE8EA39622A015910033E067 /* SDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8EA39522A015910033E067 /* SDWebViewController.m */; };
-		AEB012DB22A1835200B733D5 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +30,6 @@
 		AE8EA39322A015910033E067 /* SDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewController.h; sourceTree = "<group>"; };
 		AE8EA39422A015910033E067 /* SDWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewDelegate.h; sourceTree = "<group>"; };
 		AE8EA39522A015910033E067 /* SDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebViewController.m; sourceTree = "<group>"; };
-		AEB012D922A1835100B733D5 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
-		AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +46,6 @@
 		954FC8FE20AADA700017B273 = {
 			isa = PBXGroup;
 			children = (
-				AEB012D822A1835100B733D5 /* Extensions */,
 				954FC90820AADA700017B273 /* Products */,
 				954FC90A20AADA700017B273 /* RNBepaid.h */,
 				954FC90B20AADA700017B273 /* RNBepaid.m */,
@@ -68,7 +64,8 @@
 		};
 		954FC9F420AC08D70017B273 /* SDK */ = {
 			isa = PBXGroup;
-			children = ();
+			children = (
+			);
 			path = SDK;
 			sourceTree = "<group>";
 		};
@@ -80,15 +77,6 @@
 				AE8EA39522A015910033E067 /* SDWebViewController.m */,
 			);
 			path = SDWebViewController;
-			sourceTree = "<group>";
-		};
-		AEB012D822A1835100B733D5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				AEB012D922A1835100B733D5 /* NSString+URLEncoding.h */,
-				AEB012DA22A1835100B733D5 /* NSString+URLEncoding.m */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +134,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB012DB22A1835200B733D5 /* NSString+URLEncoding.m in Sources */,
 				AE8EA39622A015910033E067 /* SDWebViewController.m in Sources */,
 				954FC90C20AADA700017B273 /* RNBepaid.m in Sources */,
 			);

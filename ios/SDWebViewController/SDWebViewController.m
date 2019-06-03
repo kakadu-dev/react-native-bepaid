@@ -12,7 +12,6 @@
 
 #import "SDWebViewController.h"
 #import "SDWebViewDelegate.h"
-#import "NSString+URLEncoding.h"
 
 @interface SDWebViewController () <UIWebViewDelegate> {
     

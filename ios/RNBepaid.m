@@ -1,9 +1,6 @@
 #import "RNBepaid.h"
 #import "SDWebViewController/SDWebViewController.h"
 #import "SDWebViewController/SDWebViewDelegate.h"
-#import "NSString+URLEncoding.h"
-
-#define COMPLETE_URL @"https://test.com"
 
 typedef void (^RCTPromiseResolveBlock)(id result);
 typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError *error);
@@ -14,6 +11,8 @@ typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError
 
 @property (nonatomic) RCTPromiseResolveBlock resolveWebView;
 @property (nonatomic) RCTPromiseRejectBlock rejectWebView;
+
+@property (strong, nonatomic) NSString *endUrl;
 
 @end
 
@@ -28,6 +27,7 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
 {
     self.resolveWebView = resolve;
     self.rejectWebView = reject;
+    self.endUrl = endUrl;
     
     // Show WebView
     SDWebViewController *webViewController = [[SDWebViewController alloc] initWithURL:url];
@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
     // Detect url
     NSString *urlString = request.URL.absoluteString;
     
-    if ([urlString isEqualToString:COMPLETE_URL]) {
+    if ([urlString isEqualToString:self.endUrl]) {
         NSDictionary *dictionary = @{@"status": @YES};
         self.resolveWebView(dictionary);
         
