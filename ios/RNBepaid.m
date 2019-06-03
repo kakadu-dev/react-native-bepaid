@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
     // Detect url
     NSString *urlString = request.URL.absoluteString;
     
-    if ([urlString isEqualToString:self.endUrl]) {
+    if ([urlString containsString:self.endUrl]) {
         NSDictionary *dictionary = @{@"status": @YES};
         self.resolveWebView(dictionary);
         
