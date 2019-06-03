@@ -1,6 +1,6 @@
 #import "RNBepaid.h"
-#import "SDWebViewController/SDWebViewController.h"
-#import "SDWebViewController/SDWebViewDelegate.h"
+#import "BePaidWebViewController/BePaidWebViewController.h"
+#import "BePaidWebViewController/BePaidWebViewDelegate.h"
 
 typedef void (^RCTPromiseResolveBlock)(id result);
 typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError *error);
@@ -30,14 +30,14 @@ RCT_EXPORT_METHOD(show3DS: (NSString *)url
     self.endUrl = endUrl;
     
     // Show WebView
-    SDWebViewController *webViewController = [[SDWebViewController alloc] initWithURL:url];
+    BePaidWebViewController *webViewController = [[BePaidWebViewController alloc] initWithURL:url];
     webViewController.m_delegate = self;
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
     [self.navigationController.navigationBar setTranslucent:false];
     [[self topViewController] presentViewController:self.navigationController animated:YES completion:nil];
 }
 
-#pragma MARK: - SDWebViewDelegate
+#pragma MARK: - BePaidWebViewController
 
 - (void)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType: (UIWebViewNavigationType)navigationType {
     
