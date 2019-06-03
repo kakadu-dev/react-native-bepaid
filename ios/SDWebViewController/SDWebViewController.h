@@ -14,6 +14,5 @@
 @property (weak, nonatomic) id<SDWebViewDelegate> m_delegate;
 
 - (id)initWithURL:(id)url;
-- (NSString *)stringByURLEncoding;
 
 @end
