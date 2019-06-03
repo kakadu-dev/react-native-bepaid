@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		954FC90C20AADA700017B273 /* RNBepaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FC90B20AADA700017B273 /* RNBepaid.m */; };
-		AE6DB26222A5299B00674E43 /* SDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DB26122A5299B00674E43 /* SDWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,9 +26,6 @@
 		954FC90720AADA700017B273 /* libRNBepaid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNBepaid.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		954FC90A20AADA700017B273 /* RNBepaid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNBepaid.h; sourceTree = "<group>"; };
 		954FC90B20AADA700017B273 /* RNBepaid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBepaid.m; sourceTree = "<group>"; };
-		AE6DB25F22A5299B00674E43 /* SDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewController.h; sourceTree = "<group>"; };
-		AE6DB26022A5299B00674E43 /* SDWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebViewDelegate.h; sourceTree = "<group>"; };
-		AE6DB26122A5299B00674E43 /* SDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +46,6 @@
 				954FC90A20AADA700017B273 /* RNBepaid.h */,
 				954FC90B20AADA700017B273 /* RNBepaid.m */,
 				954FC9F420AC08D70017B273 /* SDK */,
-				AE6DB25E22A5299B00674E43 /* SDWebViewController */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,16 +62,6 @@
 			children = (
 			);
 			path = SDK;
-			sourceTree = "<group>";
-		};
-		AE6DB25E22A5299B00674E43 /* SDWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				AE6DB26022A5299B00674E43 /* SDWebViewDelegate.h */,
-				AE6DB25F22A5299B00674E43 /* SDWebViewController.h */,
-				AE6DB26122A5299B00674E43 /* SDWebViewController.m */,
-			);
-			path = SDWebViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6DB26222A5299B00674E43 /* SDWebViewController.m in Sources */,
 				954FC90C20AADA700017B273 /* RNBepaid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +243,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../react-native-cloudpayments/ios/RNCloudPayments.xcodeproj\"";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -270,6 +255,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SYSTEM_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../react-native-cloudpayments/ios/RNCloudPayments.xcodeproj\"";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
