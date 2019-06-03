@@ -72,9 +72,9 @@
 		AE6DB29B22A52E4400674E43 /* BePaidWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AE6DB29E22A52E4400674E43 /* BePaidWebViewDelegate.h */,
 				AE6DB29C22A52E4400674E43 /* BePaidWebViewController.h */,
 				AE6DB29D22A52E4400674E43 /* BePaidWebViewController.m */,
-				AE6DB29E22A52E4400674E43 /* BePaidWebViewDelegate.h */,
 			);
 			path = BePaidWebViewController;
 			sourceTree = "<group>";

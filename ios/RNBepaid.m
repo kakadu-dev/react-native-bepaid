@@ -5,7 +5,7 @@
 typedef void (^RCTPromiseResolveBlock)(id result);
 typedef void (^RCTPromiseRejectBlock)(NSString *code, NSString *message, NSError *error);
 
-@interface RNBepaid () <SDWebViewDelegate>
+@interface RNBepaid () <BePaidWebViewDelegate>
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 
