@@ -67,7 +67,7 @@ public class SecureActivity extends Activity {
     private void success() {
         WritableMap map = Arguments.createMap();
 
-        map.putBoolean("success", true);
+        map.putBoolean("status", true);
 
         SecureActivity.promise.resolve(map);
     }
@@ -75,7 +75,7 @@ public class SecureActivity extends Activity {
     private void error() {
         WritableMap map = Arguments.createMap();
 
-        map.putBoolean("success", false);
+        map.putBoolean("status", false);
         map.putString("message", "Canceled");
 
         SecureActivity.promise.reject("Canceled");
