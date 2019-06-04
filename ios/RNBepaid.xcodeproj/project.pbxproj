@@ -113,7 +113,7 @@
 				};
 			};
 			buildConfigurationList = 954FC90220AADA700017B273 /* Build configuration list for PBXProject "RNBepaid" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
