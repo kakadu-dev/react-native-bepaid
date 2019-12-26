@@ -14,11 +14,6 @@ or
 yarn add react-native-bepaid
 ```
 
-Link dependencies:
-```shell
-react-native link react-native-bepaid
-```
-
 # Methods
 
 ### createEncryptedFields()
@@ -45,23 +40,6 @@ const exampleCard = {
 RNBepaid.createEncryptedFields(exampleCard.number, exampleCard.extDate, exampleCard.cvvCode, exampleCard.cardHolder)
   .then(encryptedFields => {
     console.log(encryptedFields);
-  });
-```
-
-### show3DS()
-Show 3D secure.
-Returns a `Promise` that resolve (`Object`).
-
-__Arguments__
-- `url` - `String` Url redirect.
-
-__Examples__
-```js
-import RNBepaid from 'react-native-bepaid';
-
-RNBepaid.show3DS('https://demo.url.bepaid.by')
-  .then(result => {
-    console.log(result); 
   });
 ```
 
