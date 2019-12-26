@@ -1,7 +1,4 @@
-import { NativeModules } from 'react-native';
 import BeGatewayCSE from './begateway/BegatewayEncrypt';
-
-const RNBepaidModule = NativeModules.RNBepaid;
 
 export default class RNBepaid
 {
