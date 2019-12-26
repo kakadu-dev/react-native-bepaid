@@ -1,5 +1,5 @@
 {
-    "name": "@kakadu-dev/base-frontend-helpers",
+    "name": "@kakadu-dev/react-native-bepaid",
     "version": "2.0.0",
     "description": "Bepaid SDK for react-native",
     "main": "index.js",
